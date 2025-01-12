@@ -1,5 +1,6 @@
 services:
   database:
+    container_name: postgresql-database
     image: postgres:latest
     environment:
       POSTGRES_DB: database
@@ -9,6 +10,7 @@ services:
       - '5432:5432'
 
   backend:
+    container_name: telegram-bot-backend
     build: .
     ports:
       - '4200:4200'
