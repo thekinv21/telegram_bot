@@ -28,6 +28,7 @@
 		"@nestjs/platform-express": "^10.0.0",
 		"@nestjs/swagger": "^8.1.1",
 		"@prisma/client": "^6.2.1",
+		"axios": "^1.7.9",
 		"dotenv": "^16.4.7",
 		"nestjs-telegraf": "^2.8.1",
 		"prisma": "^6.2.1",

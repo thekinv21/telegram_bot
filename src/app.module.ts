@@ -1,4 +1,5 @@
-import { Module } from '@nestjs/common'
+import { MiddlewareConsumer, Module } from '@nestjs/common'
+import { LoggingMiddleware } from './common'
 import { CoreModule } from './core'
 
 @Module({
@@ -6,4 +7,8 @@ import { CoreModule } from './core'
 	controllers: [],
 	providers: []
 })
-export class AppModule {}
+export class AppModule {
+	configure(consumer: MiddlewareConsumer) {
+		consumer.apply(LoggingMiddleware)
+	}
+}
