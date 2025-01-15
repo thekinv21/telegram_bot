@@ -2,8 +2,15 @@ import { MiddlewareConsumer, Module } from '@nestjs/common'
 import { LoggingMiddleware } from './common'
 import { CoreModule } from './core'
 
+import { ConfigModule } from '@nestjs/config'
+
 @Module({
-	imports: [CoreModule],
+	imports: [
+		ConfigModule.forRoot({
+			isGlobal: true
+		}),
+		CoreModule
+	],
 	controllers: [],
 	providers: []
 })
