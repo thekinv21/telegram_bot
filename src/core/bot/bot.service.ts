@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 
 @Injectable()
 export class TelegramBotService {
-	constructor() {}
+	constructor(private configService: ConfigService) {}
 
-	public getProfile() {
-		return null
-	}
+	public async getProfile() {}
 }
