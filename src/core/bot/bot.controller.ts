@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common'
+import { Controller, Get, Post } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { TelegramBotService } from './bot.service'
 
@@ -10,6 +10,12 @@ export class TelegramBotController {
 	@ApiOperation({ summary: 'Get Bot profile' })
 	@Get('/get-me')
 	public getProfile() {
-		return this.telegramBotService.getProfile()
+		return this.telegramBotService.getBotInfo()
+	}
+
+	@ApiOperation({ summary: 'Set a new chat photo' })
+	@Post('/set-chat-photo')
+	public setChatPhoto() {
+		return this.telegramBotService.setChatPhoto()
 	}
 }
